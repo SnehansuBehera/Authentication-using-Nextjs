@@ -94,7 +94,7 @@ export default function LoginPage() {
 
 
 
-                <Link href="/login">Don't have account? <span className="text-sky-400">Sign up</span></Link>
+                <Link href="/signup">Don't have account? <span className="text-sky-400">Sign up</span></Link>
             </div>
         </div>
 
