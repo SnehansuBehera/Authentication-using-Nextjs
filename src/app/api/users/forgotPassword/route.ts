@@ -1,7 +1,9 @@
+import { dbConnect } from "@/dbConfig/dbConfig";
 import { sendMail } from "@/helpers/mailer";
 import User from "@/models/userModels";
 import { NextRequest, NextResponse } from "next/server";
 
+dbConnect();
 
 export async function POST(request: NextRequest) {
     try {
