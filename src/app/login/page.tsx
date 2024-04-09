@@ -34,6 +34,14 @@ export default function LoginPage() {
             setLoading(false);
         }
     }
+    const onForgotPass = async () => {
+        try {
+            console.log(user.email);
+            await axios.post("/api/users/forgotPassword", [user.email]);
+        } catch (error: any) {
+            console.log('Cant retrieve')
+        }
+    }
 
     useEffect(() => {
         if (user.email.length > 0 && user.password.length > 0) {
@@ -81,6 +89,7 @@ export default function LoginPage() {
                         placeholder="password"
 
                     />
+                    <p onClick={onForgotPass} className="text-[.8rem] text-sky-500 mb-3 cursor-pointer">Forgot Password</p>
                     {
                         buttonDisabled ? <button
                             disabled
