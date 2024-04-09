@@ -7,7 +7,8 @@ dbConnect();
 export async function POST(request: NextRequest) {
     try {
         const reqbody = await request.json();
-        const { token } = await reqbody;
+        const { token } = reqbody;
+        console.log(token);
         const user = await User.findOne({
             verifyToken: token,
             verifyTokenExpire: { $gt: Date.now() }
