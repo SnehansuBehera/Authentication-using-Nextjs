@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -17,6 +17,7 @@ export default function LoginPage() {
     })
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
+    const [mailed, setMailed] = useState(false);
 
     const onLogin = async (e: any) => {
         try {
@@ -36,6 +37,7 @@ export default function LoginPage() {
     }
     const onForgotPass = async () => {
         try {
+            setMailed(true);
             console.log(user.email);
             await axios.post("/api/users/forgotPassword", [user.email]);
         } catch (error: any) {
@@ -104,6 +106,11 @@ export default function LoginPage() {
 
 
                 <Link href="/signup">Don't have account? <span className="text-sky-400">Sign up</span></Link>
+                {
+                    mailed && (
+                        <p className="mt-5 text-slate-400 font-semibold">Verification mail is sent to you</p>
+                    )
+                }
             </div>
         </div>
 
