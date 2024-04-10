@@ -19,7 +19,7 @@ const page = () => {
     useEffect(() => {
         const getToken = window.location.search.split('=')[1];
         setToken(getToken);
-    })
+    }, [])
     return (
         <div className='bg-[#E5E7EB] flex justify-center items-center h-[100vh]'>
             <div className='text-white flex flex-col gap-5 justify-start items-center px-6 py-6 bg-white rounded-md shadow-md shadow-gray-400'>

@@ -10,12 +10,12 @@ import { toast } from "react-hot-toast";
 
 export default function LoginPage() {
     const router = useRouter();
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         email: "",
         password: "",
 
     })
-    const [buttonDisabled, setButtonDisabled] = React.useState(false);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     const [loading, setLoading] = React.useState(false);
     const [mailed, setMailed] = useState(false);
 
