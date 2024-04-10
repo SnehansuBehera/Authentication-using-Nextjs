@@ -41,7 +41,7 @@ export default function LoginPage() {
             console.log(user.email);
             await axios.post("/api/users/forgotPassword", [user.email]);
         } catch (error: any) {
-            console.log('Cant retrieve')
+            console.log(error.message)
         }
     }
 
