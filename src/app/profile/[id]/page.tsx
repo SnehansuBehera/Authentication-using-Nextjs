@@ -7,7 +7,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 
-const userProfile = ({ params }: any) => {
+const UserProfile = ({ params }: any) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const getName = async () => {
@@ -47,4 +47,4 @@ const userProfile = ({ params }: any) => {
     )
 }
 
-export default userProfile
+export default UserProfile

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 
-const profilePage = () => {
+const ProfilePage = () => {
     const route = useRouter()
     const [userId, setUserId] = useState('');
 
@@ -88,4 +88,4 @@ const profilePage = () => {
     )
 }
 
-export default profilePage
+export default ProfilePage
