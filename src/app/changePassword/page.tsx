@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
     const route = useRouter();
     const [newPassword, setNewPassword] = useState('');
     const [token, setToken] = useState('');
@@ -45,4 +45,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
