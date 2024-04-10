@@ -23,6 +23,7 @@ const userProfile = ({ params }: any) => {
     useEffect(() => {
         getName();
     }, [name])
+
     return (
         <div className='bg-gray-200 flex flex-col gap-4 items-center justify-center h-[100vh]'>
             <div className='bg-white px-10 py-8 flex flex-col items-start justify-center rounded-lg shadow-md shadow-slate-400 gap-5'>

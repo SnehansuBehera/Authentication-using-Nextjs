@@ -1,13 +1,16 @@
 'use client'
 
 import axios from 'axios'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
+
 const profilePage = () => {
     const route = useRouter()
     const [userId, setUserId] = useState('');
+
 
     const logout = async () => {
         try {
@@ -32,17 +35,55 @@ const profilePage = () => {
     }
 
     return (
-        <div className='bg-black text-center h-[100vh] flex flex-col gap-4 items-center justify-center'>
-            <h1 className='text-white'>Profile page</h1>
-            <h4 className='text-white'>{userId == '' ? 'No user' : <Link className='text-black bg-white py-2 px-4' href={`/profile/${userId}`}>{userId}</Link>}</h4>
+        <div className='bg-white text-center h-[100vh] flex flex-col items-center justify-center relative'>
+
+
             <button
                 onClick={logout}
-                className='py-2 px-4 ring-1 ring-white text-white font-bold'
-            >Logout</button>
-            <button
-                onClick={getUserDetails}
-                className='py-2 px-4 ring-1 ring-white text-white font-bold'
-            >User Details</button>
+                className='py-4 px-6 rounded-md bg-transparent shadow-sm shadow-slate-500 text-gray-500 font-bold absolute top-[5rem] right-[10rem] flex gap-4'
+            >
+                <Image src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6 rotate-180' />
+                <p>Logout</p>
+
+            </button>
+
+
+            <div className='bg-white px-10 py-8 flex flex-col items-start justify-center rounded-lg shadow-md shadow-slate-400 gap-5'>
+
+                <div className='flex gap-8 items-center justify-start'>
+                    <div className='flex flex-col items-center justify-center gap-2'>
+                        <h1 className='text-slate-400 font-bold text-[18px]'>Welcome</h1>
+                        <Image src='/insta.jpg' alt='profile' width={200} height={200} className='rounded-full w-32' />
+                    </div>
+
+                    <div className='flex flex-col gap-1 items-start justify-center mt-5'>
+                        <h1 className='text-[2rem] font-bold text-slate-500 leading-8'>Snehansu Behera</h1>
+                        <h2 className='text-slate-400 font-semibold text-[.95rem]'>IIIT KALYANI 2022-26</h2>
+                        <h2 className='text-slate-400 font-semibold text-[.95rem]'>Fullstack Developer</h2>
+                        <div className='flex gap-3 items-center justify-center mt-2'>
+                            <Link href={'https://github.com/SnehansuBehera'}><Image src='/github.png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
+                            <Link href={'https://www.linkedin.com/in/snehansu-behera-314b17258/'}><Image src='/linkedin (4).png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
+                            <Link href={'https://twitter.com/SnehansuBehera1'}><Image src='/twitter.png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
+                            <Link href={'https://www.instagram.com/snehansu_08/'}><Image src='/instagram (1).png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className='flex items-center justify-start gap-4 ml-2'>
+                    <p
+                        onClick={getUserDetails}
+                        className='text-black font-bold cursor-pointer'
+                    >User Details</p>
+                    <Image onClick={getUserDetails} src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6' />
+                </div>
+                <h4 className='text-black'>{userId && (<Link className='flex items-center justify-start gap-5 text-black bg-transparent rounded-md shadow-sm shadow-slate-400 py-4 px-6 ' href={`/profile/${userId}`}>
+                    <p>ID: #{userId}</p> <Image src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6' />
+                </Link>)}</h4>
+
+
+            </div>
+
         </div>
     )
 }
