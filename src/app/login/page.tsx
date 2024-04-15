@@ -97,7 +97,7 @@ export default function LoginPage() {
                             disabled
                             className="p-2 rounded-lg mb-4 cursor-default bg-slate-400 text-slate-300">Login</button> : <button
                                 onClick={onLogin}
-                                className="p-2 rounded-lg mb-4 ring-1 ring-inset ring-lime-300 bg-green-400 text-white font-semibold">Login</button>
+                                className="p-2 rounded-lg mb-4 ring-1 ring-inset ring-lime-300 bg-green-400 text-white font-semibold">{loading ? 'Processing...' : 'Login'}</button>
                     }
                 </form>
 

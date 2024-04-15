@@ -42,7 +42,7 @@ const ProfilePage = () => {
                 onClick={logout}
                 className='py-4 px-6 rounded-md bg-transparent shadow-sm shadow-slate-500 text-gray-500 font-bold absolute top-[5rem] right-[10rem] flex gap-4'
             >
-                <Image src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6 rotate-180' />
+                <Image src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6 rotate-180 hover:translate-x-[-10px] hover:delay-150 hover:duration-500' />
                 <p>Logout</p>
 
             </button>
@@ -61,10 +61,10 @@ const ProfilePage = () => {
                         <h2 className='text-slate-400 font-semibold text-[.95rem]'>IIIT KALYANI 2022-26</h2>
                         <h2 className='text-slate-400 font-semibold text-[.95rem]'>Fullstack Developer</h2>
                         <div className='flex gap-3 items-center justify-center mt-2'>
-                            <Link href={'https://github.com/SnehansuBehera'}><Image src='/github.png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
-                            <Link href={'https://www.linkedin.com/in/snehansu-behera-314b17258/'}><Image src='/linkedin (4).png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
-                            <Link href={'https://twitter.com/SnehansuBehera1'}><Image src='/twitter.png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
-                            <Link href={'https://www.instagram.com/snehansu_08/'}><Image src='/instagram (1).png' alt='myProfiles' width={200} height={200} className='w-5' /></Link>
+                            <Link href={'https://github.com/SnehansuBehera'}><Image src='/github.png' alt='myProfiles' width={200} height={200} className='w-5 transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300' /></Link>
+                            <Link href={'https://www.linkedin.com/in/snehansu-behera-314b17258/'}><Image src='/linkedin (4).png' alt='myProfiles' width={200} height={200} className='w-5 transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300' /></Link>
+                            <Link href={'https://twitter.com/SnehansuBehera1'}><Image src='/twitter.png' alt='myProfiles' width={200} height={200} className='w-5 transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300' /></Link>
+                            <Link href={'https://www.instagram.com/snehansu_08/'}><Image src='/instagram (1).png' alt='myProfiles' width={200} height={200} className='w-5 transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-110 duration-300' /></Link>
                         </div>
 
                     </div>
@@ -75,7 +75,7 @@ const ProfilePage = () => {
                         onClick={getUserDetails}
                         className='text-black font-bold cursor-pointer'
                     >User Details</p>
-                    <Image onClick={getUserDetails} src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6' />
+                    <Image onClick={getUserDetails} src='/next (1).png' alt='arrow' width={200} height={200} className='w-6 animate-bounce' />
                 </div>
                 <h4 className='text-black'>{userId && (<Link className='flex items-center justify-start gap-5 text-black bg-transparent rounded-md shadow-sm shadow-slate-400 py-4 px-6 ' href={`/profile/${userId}`}>
                     <p>ID: #{userId}</p> <Image src='/next (1).png' alt='arrow' width={200} height={200} className=' w-6' />

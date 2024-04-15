@@ -98,7 +98,7 @@ export default function SignupPage() {
                             disabled
                             className="p-2 rounded-lg mb-4 cursor-default bg-slate-400 text-slate-300">Sign up</button> : <button
                                 onClick={onSignup}
-                                className="p-2 rounded-lg mb-4 ring-1 ring-inset ring-lime-300 bg-green-400 text-white font-semibold">Sign up</button>
+                                className="p-2 rounded-lg mb-4 ring-1 ring-inset ring-lime-300 bg-green-400 text-white font-semibold">{loading ? 'Processing...' : 'Login'}</button>
                     }
                 </form>
 

@@ -10,11 +10,13 @@ import { useState } from 'react'
 const UserProfile = ({ params }: any) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [verified, setVerified] = useState(false);
     const getName = async () => {
         try {
             const response = await axios.get('/api/users/me');
             setName(response.data.data.username);
             setEmail(response.data.data.email);
+            setVerified(response.data.data.isVerified);
 
         } catch (error) {
             console.log('Cant get name')
@@ -35,7 +37,11 @@ const UserProfile = ({ params }: any) => {
                         <h2 className='text-slate-400 font-semibold text-[1.2rem]'>{email}</h2>
                         <h2 className='text-slate-400 font-semibold text-[1.2rem]'> Id: #{params.id.substring(0, 3)}</h2>
 
-                        <p className='text-[20px] font-bold text-green-500'>verified</p>
+                        {
+                            verified ? <p className='text-[20px] font-bold text-green-500'>verified</p> : <p className='text-[20px] font-bold text-red-500'> Not verified</p>
+
+                        }
+
                     </div>
 
                 </div>
