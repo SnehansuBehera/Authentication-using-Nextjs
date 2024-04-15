@@ -38,7 +38,7 @@ const Verifyemail = () => {
                 <div>
                     <h2 className='font-bold'>Email Verified</h2>
                     <br />
-                    <Link href='/login'><a className='text-sky-400 font-bold'>Login</a></Link>
+                    <Link href='/login'><p className='text-sky-400 font-bold'>Login</p></Link>
                 </div>
             )}
 
