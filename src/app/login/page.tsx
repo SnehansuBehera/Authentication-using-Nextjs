@@ -105,7 +105,8 @@ export default function LoginPage() {
 
 
 
-                <Link href="/signup">Don't have account? <span className="text-sky-400">Sign up</span></Link>
+                <Link href="/signup">Dont have account? <span className="text-sky-400">Sign up</span></Link>
+
                 {
                     mailed && (
                         <p className="mt-5 text-slate-400 font-semibold">Verification mail is sent to you</p>

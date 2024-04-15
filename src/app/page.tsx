@@ -33,7 +33,7 @@ export default function Home() {
 
 
                     <p className="w-[35rem] text-slate-400 font-semibold leading-6 text-[1rem]">
-                        This is a simple authentication service made with NEXT.js where a user can sign up using their credentials which includes his/her email and password further they can login to their dashboard.User can also change change their password using 'Forgot password'.
+                        This is a simple authentication service made with NEXT.js where a user can sign up using their credentials which includes his/her email and password further they can login to their dashboard.User can also change change their password using Forgot password.
                     </p>
 
 
